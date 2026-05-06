@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ECS, CIL, LR & ERL Dashboard</h1>
+        <p class="subtitle">Performance Tracker (Real-time Collaborative)</p>
+
+        <div class="dashboard-grid">
+            <!-- ECS Dashboard -->
+            <div class="dashboard-card">
+                <h2>ECS</h2>
+                <div class="section">
+                    <h3>Fresh</h3>
+                    <div class="input-group">
+                        <label>Target</label>
+                        <input type="number" class="target" data-type="fresh" data-section="ecs">
+                    </div>
+                    <div class="input-group">
+                        <label>Achieved</label>
+                        <input type="number" class="achieved" data-type="fresh" data-section="ecs">
+                    </div>
+                    <div class="percentage" id="ecs-fresh-percent">0%</div>
+                </div>
+            </div>
+
+            <!-- CIL Dashboard -->
+            <div class="dashboard-card">
+                <h2>CIL</h2>
+                <div class="section">
+                    <h3>Fresh</h3>
+                    <div class="input-group">
+                        <label>Target</label>
+                        <input type="number" class="target" data-type="fresh" data-section="cil">
+                    </div>
+                    <div class="input-group">
+                        <label>Achieved</label>
+                        <input type="number" class="achieved" data-type="fresh" data-section="cil">
+                    </div>
+                    <div class="percentage" id="cil-fresh-percent">0%</div>
+                </div>
+            </div>
+
+            <!-- LR Dashboard -->
+            <div class="dashboard-card">
+                <h2>LR</h2>
+                <div class="section">
+                    <h3>Fresh</h3>
+                    <div class="input-group">
+                        <label>Target</label>
+                        <input type="number" class="target" data-type="fresh" data-section="lr">
+                    </div>
+                    <div class="input-group">
+                        <label>Achieved</label>
+                        <input type="number" class="achieved" data-type="fresh" data-section="lr">
+                    </div>
+                    <div class="percentage" id="lr-fresh-percent">0%</div>
+                </div>
+            </div>
+
+            <!-- ERL Dashboard -->
+            <div class="dashboard-card">
+                <h2>ERL</h2>
+                <div class="section">
+                    <h3>Fresh</h3>
+                    <div class="input-group">
+                        <label>Target</label>
+                        <input type="number" class="target" data-type="fresh" data-section="erl">
+                    </div>
+                    <div class="input-group">
+                        <label>Achieved</label>
+                        <input type="number" class="achieved" data-type="fresh" data-section="erl">
+                    </div>
+                    <div class="percentage" id="erl-fresh-percent">0%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="quick-fill-btn" onclick="quickFill()">Quick Fill</button>
+            <button class="clear-btn" onclick="clearAll()">Clear All</button>
+            <button class="update-btn" onclick="updateData()" id="updateBtn">
+                <span class="btn-text">Upload to Cloud</span>
+                <span class="btn-icon">☁️</span>
+            </button>
+            <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+        </div>
+        <div class="sync-status" id="syncStatus">Click "Upload to Cloud" to save changes</div>
+    </div>
+
+    <!-- Firebase SDK (Compat version for local file:// usage) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
